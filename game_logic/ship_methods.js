@@ -1,7 +1,7 @@
 function checkForShip(player, coordinates) {
-  var shipPresent, ship;
+  let shipPresent, ship;
 
-  for (var i = 0; i < player.ships.length; i++) {
+  for (let i = 0; i < player.ships.length; i++) {
     ship = player.ships[i];
 
     shipPresent = ship.location.filter(function (actualCoordinate) {
@@ -11,12 +11,11 @@ function checkForShip(player, coordinates) {
       );
     })[0];
 
-    if (!shipPresent) {
-      return false;
-    } else {
+    if (shipPresent) {
       return true;
     }
   }
+  return false;
 }
 
 module.exports.checkForShip = checkForShip;
